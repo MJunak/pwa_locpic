@@ -1,6 +1,6 @@
 import React, { Component, State } from 'react';
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
-
+import LocateControl from  '../LocateControl/LocateControl'
 // type Position = { lat: number, lng: number }
 // 
 // type State = {
@@ -8,6 +8,15 @@ import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
 //   marker: Position,
 //   zoom: number,
 //   draggable: boolean,
+
+// Setup LocateControl options
+const locateOptions = {
+  position: 'topright',
+  strings: {
+      title: 'Show me where I am, yo!'
+  },
+  onActivate: () => {} // callback before engine starts retrieving locations
+}
 
 export default class SimpleMap extends Component {
 
@@ -61,6 +70,7 @@ export default class SimpleMap extends Component {
             </span>
           </Popup>
         </Marker>
+      <LocateControl options={locateOptions} startDirectly/>
       </Map>
     )
   }
