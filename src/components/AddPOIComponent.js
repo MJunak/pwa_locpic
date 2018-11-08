@@ -1,4 +1,4 @@
-import React, { Component, State } from 'react';
+import React, { Component } from 'react';
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
 import { geolocated } from 'react-geolocated';
 import LocationSearching from '@material-ui/icons/LocationSearching';
@@ -7,6 +7,9 @@ import Grid from '@material-ui/core/Grid';
 import { Button, IconButton } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
+import Dialog from '@material-ui/core/Dialog';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogTitle from '@material-ui/core/DialogTitle';
 
 class AddPOIComponent extends Component {
 

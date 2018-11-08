@@ -1,0 +1,539 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "id": 0,
+            "properties": {
+                "NAME": "Nau",
+                "REFS": {
+                    "AG": "6167-Fliegenfischen-an-der-Nau-UL-89?p=48200&viewfull=1#post48200",
+                    "WP": "http:\/\/de.wikipedia.org\/wiki\/Nau"
+                },
+                "REGION": "DE-BY",
+                "AGS": "DE-11592"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.154457,
+                    48.480603
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1,
+            "properties": {
+                "NAME": "Eider",
+                "REFS": {
+                    "AG": "5114-Freie-Gewässer-in-Schleswig-Holstein?p=39105&viewfull=1#post39105",
+                    "WP": "http:\/\/de.wikipedia.org\/wiki\/Eider"
+                },
+                "REGION": "DE-SH",
+                "AGS": "DE-952, DE-59782"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    9.13805,
+                    54.339472
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 2,
+            "properties": {
+                "NAME": "Stör",
+                "REFS": {
+                    "AG": "5114-Freie-Gewässer-in-Schleswig-Holstein?p=39105&viewfull=1#post39105",
+                    "WP": "http:\/\/de.wikipedia.org\/wiki\/Stör_(Elbe)"
+                },
+                "REGION": "DE-SH",
+                "AGS": "DE-5976"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    9.515769,
+                    53.916915
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 3,
+            "properties": {
+                "NAME": "Pfuhler See",
+                "REFS": {
+                    "AG": "6163-Angeln-im-Donauried?p=48161&viewfull=1#post48161",
+                    "WP": ""
+                },
+                "REGION": "DE-BY",
+                "AGS": "???"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.041159,
+                    48.427893
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 4,
+            "properties": {
+                "NAME": "Haugsee",
+                "REFS": {
+                    "AG": "6163-Angeln-im-Donauried?p=48161&viewfull=1#post48161",
+                    "WP": ""
+                },
+                "REGION": "DE-BY",
+                "AGS": "???"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.073193,
+                    48.42405
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 5,
+            "properties": {
+                "NAME": "Alster (freier Abschnitt)",
+                "REFS": {
+                    "AG": "5114-Freie-Gewässer-in-Schleswig-Holstein?p=60682&viewfull=1#post60682",
+                    "WP": ""
+                },
+                "REGION": "DE-SH",
+                "AGS": "???"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.1475757,
+                    53.7749291
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 6,
+            "properties": {
+                "NAME": "Waldsee",
+                "REFS": {
+                    "AG": "6163-Angeln-im-Donauried?p=48161&viewfull=1#post48161",
+                    "WP": "",
+                    "OSM": "100179983"
+                },
+                "REGION": "DE-BY",
+                "AGS": "???"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.0981794,
+                    48.4355446
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 7,
+            "properties": {
+                "NAME": "Allmendsee",
+                "REFS": {
+                    "AG": "http://www.fischereiverein-dettingen.de/gewaesser.html",
+                    "WP": ""
+                },
+                "REGION": "DE-BY",
+                "AGS": "???"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.1315587,
+                    48.1038145
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 8,
+            "properties": {
+                "NAME": "Giessenbach",
+                "REFS": {
+                    "AG": "http://www.fischereiverein-dettingen.de/gewaesser.html",
+                    "WP": ""
+                },
+                "REGION": "DE-BY",
+                "AGS": "???"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.1159218,
+                    48.1199825
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 9,
+            "properties": {
+                "NAME": "?? bei Kellmünz",
+                "REFS": {
+                    "AG": "",
+                    "WP": ""
+                },
+                "REGION": "DE-BY",
+                "AGS": "???"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.1122,
+                    48.1306
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 10,
+            "properties": {
+                "NAME": "?? bei Mindelheim",
+                "REFS": {
+                    "AG": "",
+                    "WP": ""
+                },
+                "REGION": "DE-BY",
+                "AGS": "???"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.4677,
+                    48.0375
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 11,
+            "properties": {
+                "NAME": "Weißingersee",
+                "REFS": {
+                    "AG": "",
+                    "WP": "",
+                    "X1": "http:\/\/www.elchinger-angelcenter.de\/Tageskarten#widgetanchor_2592607_r6n3r33D_PROD"
+                },
+                "REGION": "DE-BY",
+                "AGS": "???"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.139012,
+                    48.448251
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 12,
+            "properties": {
+                "NAME": "Unterelchinger See",
+                "REFS": {
+                    "AG": "",
+                    "WP": "",
+                    "X1": "http:\/\/www.elchinger-angelcenter.de\/Tageskarten#widgetanchor_2592604_VPG9PVna_PROD"
+                },
+                "REGION": "DE-BY",
+                "AGS": "???"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.136469,
+                    48.449219
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 13,
+            "properties": {
+                "NAME": "Riedelsee",
+                "REFS": {
+                    "AG": "6163-Angeln-im-Donauried?p=48188&viewfull=1#post48188",
+                    "WP": ""
+                },
+                "REGION": "DE-BY",
+                "AGS": "???"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.127717,
+                    48.445605
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 14,
+            "properties": {
+                "NAME": "Autobahnsee",
+                "REFS": {
+                    "AG": "6163-Angeln-im-Donauried?p=48188&viewfull=1#post48188",
+                    "WP": "",
+                    "X1": "http:\/\/www.elchinger-angelcenter.de\/Tageskarten#widgetanchor_2592579_n77NtzHX_PROD",
+                    "X3": "http:\/\/www.fischereiverein-unterelchingen.de\/?page_id=13"
+                },
+                "REGION": "DE-BY",
+                "AGS": "???"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.120293,
+                    48.448053
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 15,
+            "properties": {
+                "NAME": "Schützensee",
+                "REFS": {
+                    "AG": "",
+                    "WP": "",
+                    "X1": "http:\/\/www.elchinger-angelcenter.de\/Tageskarten#widgetanchor_2592601_zrBg5K57_PROD",
+                    "X2": "http:\/\/www.fischereiverein-unterelchingen.de\/?page_id=14"
+                },
+                "REGION": "DE-BY",
+                "AGS": "???"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.131201,
+                    48.446600
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 16,
+            "properties": {
+                "NAME": "Baggersee Unterelchingen",
+                "REFS": {
+                    "AG": "",
+                    "WP": "",
+                    "X1": "http:\/\/www.elchinger-angelcenter.de\/Tageskarten#widgetanchor_2592581_nhgGVD-2_PROD"
+                },
+                "REGION": "DE-BY",
+                "AGS": "???"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.132086,
+                    48.450676
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 17,
+            "properties": {
+                "NAME": "Brandstätter See",
+                "REFS": {
+                    "AG": "6163-Angeln-im-Donauried?p=48161&viewfull=1#post48161",
+                    "WP": "",
+                    "X1": "http:\/\/www.elchinger-angelcenter.de\/Tageskarten#widgetanchor_2592581_nhgGVD-2_PROD",
+                    "X2": "http:\/\/www.fischereiverein-unterelchingen.de\/?page_id=8"
+                },
+                "REGION": "DE-BY",
+                "AGS": "???"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.088722,
+                    48.408782
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 18,
+            "properties": {
+                "NAME": "Angelsee Brekendorf",
+                "REFS": {
+                    "AG": "",
+                    "WP": ""
+                },
+                "REGION": "DE-SH",
+                "AGS": "???"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    9.622921,
+                    54.417246
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 19,
+            "properties": {
+                "NAME": "Bistensee",
+                "REFS": {
+                    "AG": "7364-Im-Bistensee-angeln-RD-24?p=60507&viewfull=1#post60507",
+                    "WP": "http:\/\/de.wikipedia.org\/wiki\/Bistensee",
+                    "X1": "http:\/\/www.umweltdaten.landsh.de\/nuis\/wafis\/seen\/seen\/bistensee\/bistensee_tief.gif"
+                },
+                "REGION": "DE-SH",
+                "AGS": "???"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    9.68671688266272,
+                    54.3905101
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 20,
+            "properties": {
+                "NAME": "Steinheimer See",
+                "REFS": {
+                    "AG": "6163-Angeln-im-Donauried?p=48161&viewfull=1#post48161",
+                    "WP": "",
+                    "X1": "http:\/\/www.fv1880.de\/downloads\/Steinheimer_See.pdf"
+                },
+                "REGION": "DE-BY",
+                "AGS": "???"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.130959,
+                    48.391899
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 21,
+            "properties": {
+                "NAME": "Glockerauer Seen (Forellen- u. Hechtweiher)",
+                "REFS": {
+                    "AG": "6163-Angeln-im-Donauried?p=48161&viewfull=1#post48161",
+                    "WP": "",
+                    "X1": "http:\/\/www.fv1880.de\/downloads\/Glockerauseen.pdf"
+                },
+                "REGION": "DE-BY",
+                "AGS": "???"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.084344,
+                    48.433928
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 22,
+            "properties": {
+                "NAME": "Donaustauseenkette",
+                "REFS": {
+                    "AG": "5573-Im-Oberen-Donautal-angeln?p=42539&viewfull=1#post42539",
+                    "WP": "",
+                    "X1": "http:\/\/www.fv1880.de\/nextgen\/index.php\/gewaesser\/gewaesser-fuer-gaestekarten\/donaustauseenkette"
+                },
+                "REGION": "DE-BW",
+                "AGS": "???"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    9.871859,
+                    48.309783
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 23,
+            "properties": {
+                "NAME": "Rühmer Teiche \/ Biberhacken",
+                "REFS": {
+                    "AG": "6163-Angeln-im-Donauried?p=48199&viewfull=1#post48199",
+                    "WP": ""
+                },
+                "REGION": "DE-BY",
+                "AGS": "???"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.177447,
+                    48.435353
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 24,
+            "properties": {
+                "NAME": "Mooswaldseen",
+                "REFS": {
+                    "AG": "6163-Angeln-im-Donauried?p=48390&viewfull=1#post48390",
+                    "WP": ""
+                },
+                "REGION": "DE-BY",
+                "AGS": "???"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.250112,
+                    48.490093
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 25,
+            "properties": {
+                "NAME": "Riedheimer See",
+                "REFS": {
+                    "AG": "6163-Angeln-im-Donauried?p=48390&viewfull=1#post48390",
+                    "WP": ""
+                },
+                "REGION": "DE-BY",
+                "AGS": "???"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.17448,
+                    48.45788
+                ]
+            }
+        }
+    ]
+}

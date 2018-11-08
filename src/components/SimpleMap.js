@@ -1,21 +1,10 @@
-import React, { Component, State } from 'react';
-import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
-// type Position = { lat: number, lng: number }
-// 
-// type State = {
-//   center: Position,
-//   marker: Position,
-//   zoom: number,
-//   draggable: boolean,
-
-// Setup LocateControl options
-const locateOptions = {
-  position: 'topright',
-  strings: {
-    title: 'Show me where I am, yo!'
-  },
-  onActivate: () => { } // callback before engine starts retrieving locations
-}
+import React, { Component } from 'react';
+import { Map, TileLayer, GeoJSON } from 'react-leaflet';
+import Dialog from '@material-ui/core/Dialog';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogActions from '@material-ui/core/DialogActions';
+import { Button } from '@material-ui/core';
+import DialogTitle from '@material-ui/core/DialogTitle';
 
 export default class SimpleMap extends Component {
 
@@ -23,21 +12,35 @@ export default class SimpleMap extends Component {
     super(props);
     this.state = {
       center: {
-        lat: 51.505,
-        lng: -0.09,
-      },
-      marker: {
-        lat: 51.505,
-        lng: -0.09,
+        lat: 48.42,
+        lng: 9.98,
       },
       zoom: 13,
-      draggable: true,
+      geoJson: null,
+      selectedFeature: {
+        properties: {
+          NAME: "the name"
+        }
+      },
+      detailDialogOpen: false
     }
     this.refmarker = React.createRef()
+
+    this.handleClose = this.handleClose.bind(this);
   }
 
   toggleDraggable = () => {
     this.setState({ draggable: !this.state.draggable })
+  }
+
+  componentDidMount() {
+    fetch("/waters.geojson", {
+      mode: "cors"
+    }).then(result => result.json())
+      .then((val) => {
+        console.log(val);
+        this.setState({ geoJson: val });
+      })
   }
 
   updatePosition = () => {
@@ -49,29 +52,69 @@ export default class SimpleMap extends Component {
     }
   }
 
-  render() {
-    const position = [this.state.center.lat, this.state.center.lng]
-    const markerPosition = [this.state.marker.lat, this.state.marker.lng]
+  getStyle(feature, layer) {
+    return {
+      color: '#006400',
+      weight: 5,
+      opacity: 0.65
+    }
+  }
 
+  onEachFeature(feature, layer) {
+    layer.on({
+      click: this.clickToFeature.bind(this)
+    });
+  }
+
+  clickToFeature(e) {
+    var layer = e.target;
+    console.log("I clicked on ", layer.feature);
+    this.setState({
+      selectedFeature: layer.feature,
+      detailDialogOpen: true
+    });
+  }
+
+  handleClose() {
+    this.setState({ detailDialogOpen: false })
+  }
+
+  renderMap() {
+    return <GeoJSON
+      data={this.state.geoJson}
+      onEachFeature={this.onEachFeature.bind(this)}
+      style={this.getStyle}></GeoJSON>;
+  }
+
+  render() {
+
+    const dialog = (<Dialog
+      open={this.state.detailDialogOpen}
+      onClose={this.handleClose}
+      aria-labelledby="alert-dialog-title"
+      aria-describedby="alert-dialog-description"
+    >
+      <DialogTitle id="alert-dialog-title">{this.state.selectedFeature.properties.NAME}</DialogTitle>
+      <DialogContent>
+
+      </DialogContent>
+      <DialogActions>
+        <Button onClick={this.handleClose} color="primary">
+          Ok
+        </Button>
+      </DialogActions>
+    </Dialog>);
+
+    const position = [this.state.center.lat, this.state.center.lng]
+    console.log(this.state);
     return (
       <div>
         <Map center={position} zoom={this.state.zoom} className="lfMap">
           <TileLayer
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          />
-          <Marker
-            draggable={this.state.draggable}
-            onDragend={this.updatePosition}
-            position={markerPosition}
-            ref={this.refmarker}>
-            <Popup minWidth={90}>
-              <span onClick={this.toggleDraggable}>
-                {this.state.draggable ? 'DRAG MARKER' : 'MARKER FIXED'}
-              </span>
-            </Popup>
-          </Marker>
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+          {this.state.geoJson ? this.renderMap() : null}
+          {dialog}
         </Map>
-      
       </div>
     )
   }
