@@ -1,6 +1,7 @@
 {
   "name": "locpic-react-v2",
   "version": "0.1.0",
+  "homepage" : "http://85.93.13.179/locpic-react/",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^3.3.1",

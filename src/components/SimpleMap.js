@@ -33,7 +33,7 @@ export default class SimpleMap extends Component {
   };
 
   componentDidMount() {
-    fetch('/waters.geojson', {
+    fetch('/locpic-react/waters.geojson', {
       mode: 'cors'
     })
       .then(result => result.json())
