@@ -6,6 +6,13 @@ import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
 import AddIcon from '@material-ui/icons/Add';
 import PropTypes from 'prop-types';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import TextField from '@material-ui/core/TextField';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import AddPOIComponent from './components/AddPOIComponent';
 
 const styles = theme => ({
   root: {
@@ -16,7 +23,7 @@ const styles = theme => ({
     position: 'absolute',
     bottom: theme.spacing.unit * 2,
     right: theme.spacing.unit * 2,
-    'z-index':  1000000001
+    'z-index': 1000000001
   },
   fabMoveUp: {
     transform: 'translate3d(0, -46px, 0)',
@@ -41,6 +48,17 @@ const styles = theme => ({
 });
 class App extends Component {
 
+  state = {
+    open: false,
+  };
+
+  handleClickOpen = () => {
+    this.setState({ open: true });
+  };
+
+  handleClose = () => {
+    this.setState({ open: false });
+  };
 
 
   render() {
@@ -55,9 +73,20 @@ class App extends Component {
 
         </header>
         <SimpleMap />
-        <Button variant="fab" className={fabClassName} color="primary">
+
+        <Button variant="fab" className={fabClassName} onClick={this.handleClickOpen} color="primary">
           <AddIcon />
         </Button>
+        <Dialog
+          open={this.state.open}
+          onClose={this.handleClose}
+          aria-labelledby="form-dialog-title"
+        >
+          <DialogTitle id="form-dialog-title">Pick your Position</DialogTitle>
+          <DialogContent>
+            <AddPOIComponent></AddPOIComponent>
+          </DialogContent>
+        </Dialog>
       </div >
     );
   }

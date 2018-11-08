@@ -14,3 +14,8 @@ body{
   right: 0px;
   z-index: 10000;
 }
+
+.pickerMap{
+    height: 30vh;
+    width: 70vw;
+}

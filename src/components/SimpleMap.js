@@ -1,6 +1,5 @@
 import React, { Component, State } from 'react';
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
-import LocateControl from  '../LocateControl/LocateControl'
 // type Position = { lat: number, lng: number }
 // 
 // type State = {
@@ -13,9 +12,9 @@ import LocateControl from  '../LocateControl/LocateControl'
 const locateOptions = {
   position: 'topright',
   strings: {
-      title: 'Show me where I am, yo!'
+    title: 'Show me where I am, yo!'
   },
-  onActivate: () => {} // callback before engine starts retrieving locations
+  onActivate: () => { } // callback before engine starts retrieving locations
 }
 
 export default class SimpleMap extends Component {
@@ -55,23 +54,25 @@ export default class SimpleMap extends Component {
     const markerPosition = [this.state.marker.lat, this.state.marker.lng]
 
     return (
-      <Map center={position} zoom={this.state.zoom} className="lfMap">
-        <TileLayer
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
-        <Marker
-          draggable={this.state.draggable}
-          onDragend={this.updatePosition}
-          position={markerPosition}
-          ref={this.refmarker}>
-          <Popup minWidth={90}>
-            <span onClick={this.toggleDraggable}>
-              {this.state.draggable ? 'DRAG MARKER' : 'MARKER FIXED'}
-            </span>
-          </Popup>
-        </Marker>
-      <LocateControl options={locateOptions} startDirectly/>
-      </Map>
+      <div>
+        <Map center={position} zoom={this.state.zoom} className="lfMap">
+          <TileLayer
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          />
+          <Marker
+            draggable={this.state.draggable}
+            onDragend={this.updatePosition}
+            position={markerPosition}
+            ref={this.refmarker}>
+            <Popup minWidth={90}>
+              <span onClick={this.toggleDraggable}>
+                {this.state.draggable ? 'DRAG MARKER' : 'MARKER FIXED'}
+              </span>
+            </Popup>
+          </Marker>
+        </Map>
+      
+      </div>
     )
   }
 }
