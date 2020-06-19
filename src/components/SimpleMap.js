@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { Map, TileLayer, GeoJSON } from 'react-leaflet';
+import { Map, TileLayer, GeoJSON, Marker } from 'react-leaflet';
 import Dialog from '@material-ui/core/Dialog';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogActions from '@material-ui/core/DialogActions';
 import { Button } from '@material-ui/core';
 import DialogTitle from '@material-ui/core/DialogTitle';
-
+import L from 'leaflet';
 export default class SimpleMap extends Component {
   constructor(props) {
     super(props);
@@ -15,7 +15,7 @@ export default class SimpleMap extends Component {
         lng: 9.98
       },
       zoom: 13,
-      geoJson: null,
+      spots: null,
       selectedFeature: {
         properties: {
           NAME: 'the name'
@@ -26,6 +26,7 @@ export default class SimpleMap extends Component {
     this.refmarker = React.createRef();
 
     this.handleClose = this.handleClose.bind(this);
+    this.handleMoveend = this.handleMoveend.bind(this);
   }
 
   toggleDraggable = () => {
@@ -33,13 +34,13 @@ export default class SimpleMap extends Component {
   };
 
   componentDidMount() {
-    fetch('/locpic-react/waters.geojson', {
+    fetch('http://localhost:3000/spots/42/9/5', {
       mode: 'cors'
     })
       .then(result => result.json())
       .then(val => {
         console.log(val);
-        this.setState({ geoJson: val });
+        this.setState({ spots: val });
       });
   }
 
@@ -66,6 +67,19 @@ export default class SimpleMap extends Component {
     });
   }
 
+  handleMoveend() {
+    var bounds = this.refs.map.leafletElement.getBounds();
+    var tl = bounds.getNorthWest();
+    var br = bounds.getSouthEast();
+    fetch('http://localhost:3000/spots/' + tl.lng + '/' + tl.lat + '/' + br.lng + '/' + br.lat, {
+      mode: 'cors'
+    })
+      .then(result => result.json())
+      .then(val => {
+        console.log(val);
+        this.setState({ spots: val });
+      });
+  }
   clickToFeature(e) {
     var layer = e.target;
     console.log('I clicked on ', layer.feature);
@@ -77,16 +91,6 @@ export default class SimpleMap extends Component {
 
   handleClose() {
     this.setState({ detailDialogOpen: false });
-  }
-
-  renderMap() {
-    return (
-      <GeoJSON
-        data={this.state.geoJson}
-        onEachFeature={this.onEachFeature.bind(this)}
-        style={this.getStyle}
-      />
-    );
   }
 
   render() {
@@ -110,13 +114,34 @@ export default class SimpleMap extends Component {
     );
 
     const position = [this.state.center.lat, this.state.center.lng];
-    console.log(this.state);
+    var spots = this.state.spots ? this.state.spots : [];
+
+    function getIcon(spot) {
+      return L.icon({
+        iconUrl: "https://www.park4night.com/www/resources/images/pins/poi_" + spot.code.toLowerCase() + ".png", iconAnchor: null,
+        popupAnchor: null,
+        shadowUrl: null,
+        shadowSize: null,
+        shadowAnchor: null,
+      });
+    }
     return (
       <div>
-        <Map center={position} zoom={this.state.zoom} className="lfMap">
+        <Map ref="map" center={position} zoom={this.state.zoom} onMoveend={this.handleMoveend} className="lfMap" >
           <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-          {this.state.geoJson ? this.renderMap() : null}
-          {dialog}
+          {spots.map(spot => (
+            <Marker
+              key={spot.id}
+              icon={getIcon(spot)}
+              position={[
+                spot.location.coordinates[1],
+                spot.location.coordinates[0],
+              ]}
+              onClick={() => {
+                console.log(spot);
+              }}
+            />
+          ))}
         </Map>
       </div>
     );
